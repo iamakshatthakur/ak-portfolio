@@ -1,0 +1,322 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+<div class="bod bg-black" style="background-image: url({{user.background_img.url}});">
+    <div id='navbar' class="navbar ">
+        <div class=" navbar_logo  text-center">
+            <div class="logo">
+                <a href="#">
+                    Portfo<span class="text-white">lio.</span>
+                </a>
+            </div>
+        </div>
+        <div class=" navbar-menu ">
+                <div class=" navbar-bar menu-btn" onclick="shownav()"  >
+                    <i class="fas fa-bars"></i>
+                </div>
+            <div class="navbar-menu-list" id="navbar-menu-list" >
+                <ul onclick="hidenav()"class="text-right menu ">
+                    <li><a href="#" >Home</a></li>
+                    <li><a href="#about" >About</a></li>
+                    <li><a href="#projects" >Projects</a></li>
+                    <li><a href="#skills" >Skills</a></li>
+                    <li><a href="#contact" >Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <section class="main">
+            <div class="mainflex  mx-0">
+                <div class=" half">
+                </div>
+                <div class=" half">
+                   <div class="main-content">
+                       <div class="text-1">Hello, my name is</div>
+                       <h1 class="text-2">{{user.name}}</h1>
+                       <div class="text-3">And I'm a <span> {{user.role}}</span></div>
+                       <div class="read" ><a href="tel:{{user.phone}}"> Call me</a></div> 
+                   </div>
+                </div>
+            </div>
+       </section>
+       <div id="about" class="bg-white text-center section2 ">
+           <div class="container-xl">
+               <div class="heading ">
+                   <h2>About me</h2>
+               </div>
+               <div class=" mainflex">
+                   <div class="mainflex5">
+                       <img class=" img_2 img-fluid" src="{{about.user_img.url}}" alt="my img">
+                   </div>
+                   <div class="mainflex7 about-me">
+                       <h3>I'm {{user.name}} and i'm a <span>{{user.role}}</span></h3>
+                       <p>{{about.about}}</p>
+                        <div class="read1">
+                            <a href="{{about.resume.url}}">download cv</a>
+                        </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+
+
+
+       <div id="projects" class="bg-black text-center section3 ">
+           <div class="container-">
+               <div class="heading ">
+                   <h2>my projects</h2>
+               </div>
+
+
+
+               
+            {% for project in projects %}
+              
+        
+
+
+            <div class="mainproject">
+                <h3>Client view (Front-end)</h3>
+                <div class="frontend">
+                    <div class="mainflex">
+                        <div class="mainflex3 project">
+                            <div class="project2">
+                                <div class="project3">
+                                    <img class="project-image" src="{{project.frontend360pimg.url}}" alt="mobile-view">
+                                </div>
+                            </div>
+                            <div class="project-desc">
+                                <h3 >Mobile-view</h3>
+                            </div>
+                        </div>
+                        <div class="mainflex4 project">
+                            <div class="project2">
+                                <div class="project4">
+                                    <img class="project-image" src="{{project.frontend720pimg.url}}" alt="Tablet-View">
+                                </div>
+                            </div>
+                            <div class="project-desc">
+                                <h3 class="tabview">Tablet-view</h3>
+                            </div>
+                        </div>
+                        <div class="mainflex5 project">
+                            <div class="project2">
+                                <div class="project5">
+                                    <img class="project-image" src="{{project.frontend1080pimg.url}}" alt="Laptop-View">
+                                </div>
+                            </div>
+                            <div class="project-desc">
+                                <h3 class="lapview">Laptop-view</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" backend">
+                    <h3 class="text-white">Admin panel (Backend)</h3>
+                    <div class="mainflex">
+                        <div class="project">
+                            <div class="project2">
+                                <div class="projectback">
+                                    <img class="project-image" src="{{project.adminloginimg.url}}" alt="Admin login">
+                                </div>
+                            </div>
+                            <div class="project-desc">
+                                <h3>Admin login Page</h3>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="project2">
+                                <div class="projectback">
+                                    <img class="project-image" src="{{project.adminpanelimg.url}}" alt="Admin login">
+                                </div>
+                            </div>
+                            <div class="project-desc">
+                                <h3>Admin Panel</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project_description text-white">
+                    <h3>About Project</h3>
+                    <p>{{project.aboutproject1}}</p>
+                    <p>{{project.aboutproject2}}</p>
+                    <p>{{project.aboutproject3}}</p>
+                    <p>{{project.aboutproject4}}</p>
+                    </div>
+                </div>
+                
+                
+                
+                {% endfor %}
+
+
+
+
+
+
+            
+           </div>
+       </div>
+
+
+
+
+
+
+       <div id="skills" class="bg-white text-center section4 ">
+           <div class="container-">
+               <div class="heading ">
+                   <h2> my   skills </h2>
+                </div>
+                <div class="container-0">
+                    <div class="container01">
+                    <div class="container2">
+                        <div class="sliders">
+                            <div class="slide fade">
+                                <div class="slidenumber"></div>
+                                <div class="slidelogo pythonlogo">
+                                    <i class="fa-brands fa-python"></i>
+                                </div> 
+                                <h3>Python</h3>
+                                <div class="slidedata">Python is a high-level, interpreted, general-purpose programming language.</div>
+                            </div>
+                            <div class="slide fade">
+                                <div class="slidenumber"></div>
+                                <div class="slidelogo djlogo">
+                                    <i class="fa-brands fa-python"></i>
+                                </div>
+                                <h3>Django</h3>
+                                <div class="slidedata">Django is a Python-based web framework, free and open-source, that follows the MVT architectural pattern</div>
+                            </div>
+                            <div class="slide fade">
+                                <div class="slidenumber"></div>
+                                <div class="slidelogo bslogo">
+                                    <i class="fa-solid fa-database"></i>
+                                </div>
+                                <h3>SQL</h3>
+                                <div class="slidedata">SQL is a standard language for storing, manipulating and retrieving data in databases.</div>
+                            </div>
+                            <div class="slide fade">
+                                <div class="slidenumber"></div>
+                                <div class="slidelogo htmllogo">
+                                    <i class="fa-brands fa-html5"></i>
+                                </div>
+                                <h3>HTML 5</h3>
+                                <div class="slidedata">HTML5 is a markup language used for structuring and presenting content on the World Wide Web.</div>
+                            </div>
+                            <div class="slide fade">
+                                <div class="slidenumber"></div>
+                                <div class="slidelogo csslogo">
+                                    <i class="fa-brands fa-css3-alt"></i>
+                                </div>
+                                <h3>CSS 3</h3>
+                                <div class="slidedata">CSS is the language we use to style an HTML document. CSS describes how HTML elements should be displayed.</div>
+                            </div>
+                            <div class="slide fade">
+                                <div class="slidenumber"></div>
+                                <div class="slidelogo jslogo">
+                                    <i class="fa-brands fa-js-square"></i>
+                                </div>
+                                <h3>Javascript</h3>
+                                <div class="slidedata">JS, is a programming language, is one of the core technologies of the WWW, alongside HTML and CSS.</div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div style="text-align:center">
+                        <span  class="dots" onclick="slidechange(1)"></span>
+                        <span class="dots" onclick="slidechange(2)"></span>
+                        <span class="dots ontab" onclick="slidechange(3)"></span>
+                        <span class="dots onmobile" onclick="slidechange(4)"></span>
+                        <span class="dots onmobile" onclick="slidechange(5)"></span>
+                        <span class="dots onmobile" onclick="slidechange(6)"></span>
+                    </div>
+                </div>
+               </div>
+           </div>
+       </div>
+       <div id="contact" class="bg-black text-center section5 ">
+           <div class="container-xl">
+               <div class="heading ">
+                   <h2> contact me </h2>
+               </div>
+               <div class="contact_section">
+                   <div class="csection1">
+                        <h3 >Get in Touch</h3>                       
+                        <div class="sectiondiv1">
+                            <a href="#">
+                                <div class="contactlogo">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="contactdetail">
+                                    <h4>Name</h4>
+                                    <p>{{user.name}}</p>
+                                </div>
+                            </a>
+                            <a href="https://goo.gl/maps/C4uQvNV8fG9jRPgH8">
+                                <div class="contactlogo">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="contactdetail">
+                                    <h4>Address</h4>
+                                    <p>{{user.address}}</p>
+                                </div>
+                            </a>
+                            <a href="mailto:{{user.emailid}}">
+                                <div class="contactlogo">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="contactdetail">
+                                    <h4>Email</h4>
+                                    <p>{{user.emailid}}</p>
+                                </div>
+                            </a>
+                        </div>
+                   </div>
+                    <div class="csection2">
+                       <h3 >Message me</h3>
+                       <form action="/" method="post">
+                        {% csrf_token %}
+                        <input class="input1" type="text" value="" name="sendername" placeholder="Name">
+                        <input class="input2" type="email" value="" name="senderemail" placeholder="Email">
+                        <input class="input3" type="text" value="" name="messagesubject" placeholder="Subject">
+                        <textarea cols="30" rows="5" name="message" placeholder="Message.." required=""></textarea>
+                        <button>Send message</button>
+                       </form>
+                    </div>
+               </div>
+           </div>
+       </div>
+        <div class="footer-section bg-black">
+            <div class="social-links">
+                <div class="mail-link">
+                    <a href="mailto:{{user.emailid}}">Mail me</a>
+                </div>
+                <div class="social-link">
+                    <div class="github">
+                        <a href="{{user.github}}">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="linkedin">
+                        <a href="{{user.linkedin}}">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="insta">
+                        <a href="{{user.instagram}}">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyryt text-white">
+                <h5 class="text-center">@copyright 2022 -by Akshat Thakur</h5>
+            </div>
+        </div>   
+    </div>
+    <div class="upbutton slidein" onclick="moveup()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+{% endblock %}
